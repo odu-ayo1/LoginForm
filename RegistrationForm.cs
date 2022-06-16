@@ -85,7 +85,8 @@ namespace LoginForm
 
         void clear() {
             txtFname.Text = "";
-            txtLname.Text = "";xt
+            txtLname.Text = "";
+
 
         }
         private void btnReset_Click(object sender, EventArgs e)
