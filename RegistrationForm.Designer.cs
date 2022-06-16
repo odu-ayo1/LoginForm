@@ -40,9 +40,14 @@ namespace LoginForm
             this.radMale = new System.Windows.Forms.RadioButton();
             this.radFemale = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
+            this.cmbMaritalStatus = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.txtCountry = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtCity = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -68,11 +73,6 @@ namespace LoginForm
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.cmbMaritalStatus = new System.Windows.Forms.ComboBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
@@ -214,12 +214,51 @@ namespace LoginForm
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Basic Information";
             // 
+            // txtConfirmPassword
+            // 
+            this.txtConfirmPassword.Location = new System.Drawing.Point(217, 297);
+            this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.PasswordChar = '*';
+            this.txtConfirmPassword.Size = new System.Drawing.Size(164, 26);
+            this.txtConfirmPassword.TabIndex = 22;
+            // 
+            // cmbMaritalStatus
+            // 
+            this.cmbMaritalStatus.FormattingEnabled = true;
+            this.cmbMaritalStatus.Items.AddRange(new object[] {
+            "Choose your Marital Status",
+            "Single",
+            "Married",
+            "Divorced"});
+            this.cmbMaritalStatus.Location = new System.Drawing.Point(217, 176);
+            this.cmbMaritalStatus.Name = "cmbMaritalStatus";
+            this.cmbMaritalStatus.Size = new System.Drawing.Size(164, 28);
+            this.cmbMaritalStatus.TabIndex = 22;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(214, 277);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(121, 17);
+            this.label21.TabIndex = 21;
+            this.label21.Text = "Confirm Password";
+            // 
             // txtCountry
             // 
             this.txtCountry.Location = new System.Drawing.Point(217, 419);
             this.txtCountry.Name = "txtCountry";
             this.txtCountry.Size = new System.Drawing.Size(164, 26);
             this.txtCountry.TabIndex = 21;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(217, 228);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(164, 26);
+            this.txtPassword.TabIndex = 20;
             // 
             // txtCity
             // 
@@ -234,6 +273,16 @@ namespace LoginForm
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(139, 26);
             this.txtUsername.TabIndex = 18;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(214, 206);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(69, 17);
+            this.label19.TabIndex = 19;
+            this.label19.Text = "Password";
             // 
             // label20
             // 
@@ -474,64 +523,17 @@ namespace LoginForm
             this.linkLabel1.Text = "Login";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // txtConfirmPassword
-            // 
-            this.txtConfirmPassword.Location = new System.Drawing.Point(217, 297);
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.PasswordChar = '*';
-            this.txtConfirmPassword.Size = new System.Drawing.Size(164, 26);
-            this.txtConfirmPassword.TabIndex = 22;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(214, 277);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(121, 17);
-            this.label21.TabIndex = 21;
-            this.label21.Text = "Confirm Password";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(217, 228);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(164, 26);
-            this.txtPassword.TabIndex = 20;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(214, 206);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(69, 17);
-            this.label19.TabIndex = 19;
-            this.label19.Text = "Password";
-            // 
-            // cmbMaritalStatus
-            // 
-            this.cmbMaritalStatus.FormattingEnabled = true;
-            this.cmbMaritalStatus.Items.AddRange(new object[] {
-            "Choose your Marital Status",
-            "Single",
-            "Married",
-            "Divorced"});
-            this.cmbMaritalStatus.Location = new System.Drawing.Point(217, 176);
-            this.cmbMaritalStatus.Name = "cmbMaritalStatus";
-            this.cmbMaritalStatus.Size = new System.Drawing.Size(164, 28);
-            this.cmbMaritalStatus.TabIndex = 22;
-            // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Red;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(657, 411);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 30;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnReset
             // 
@@ -559,6 +561,7 @@ namespace LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(758, 521);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnReset);

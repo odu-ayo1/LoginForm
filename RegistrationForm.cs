@@ -63,33 +63,61 @@ namespace LoginForm
             else {
                 Console.WriteLine("Enter the same password for confirm password");
             }
-            int phoneNo = Convert.ToInt32(txtPhone.Text);
+            long phoneNo = Convert.ToInt64(txtPhone.Text);
 
             string address = txtAddress.Text;
             string city = txtCity.Text;
             string country = txtCountry.Text;
-
-
+            // connection string
             string con = @"Data Source=DESKTOP-QL6Q26N;Initial Catalog=CRUDDB;Integrated Security=True";
             SqlConnection sc = new SqlConnection(con);
             sc.Open();
-            string sqlInsert = "insert into RegisterTable(FirstName,LastName,Email, Gender,MaritalStatus,username,password,PhoneNo,Address,City,Country) values(?,?,?,?,?,?,?,?,?,?,?) ";
+            string sqlInsert = "insert into RegisterTable(FirstName,LastName,Email, Gender,MaritalStatus,username,password,PhoneNo,Address,City,Country) " +
+                "values(@FirstName, @LastName ,@Email,@Gender,@MaritalStatus,@username,@password,@PhoneNo,@Address,@City,@Country)";
             SqlCommand sqc = new SqlCommand(sqlInsert,sc);
+            sqc.Parameters.AddWithValue("@FirstName",fname);
+            sqc.Parameters.AddWithValue("@LastName", lname);
+            sqc.Parameters.AddWithValue("@Email", email);
+            sqc.Parameters.AddWithValue("@Gender", gender);
+            sqc.Parameters.AddWithValue("@MaritalStatus", maritalStatus);
+            sqc.Parameters.AddWithValue("@username", username);
+            sqc.Parameters.AddWithValue("@password", passw);
+            sqc.Parameters.AddWithValue("@PhoneNo", phoneNo);
+            sqc.Parameters.AddWithValue("@Address", address);
+            sqc.Parameters.AddWithValue("@City", city);
+            sqc.Parameters.AddWithValue("@Country", country);
             sqc.ExecuteNonQuery();
             MessageBox.Show("Data inserted successfully");
             sc.Close();
-            Login lg = new Login();
-            lg.Show();
-            this.Hide();
+            clear();
+            //Login lg = new Login();
+            //lg.Show();
+           // this.Hide();
         }
 
         void clear() {
             txtFname.Text = "";
             txtLname.Text = "";
+            txtEmail.Text = "";
+            radMale.Checked = false;
+            radFemale.Checked = false;
+            cmbMaritalStatus.SelectedIndex = -1;
+            txtUsername.Text = "";
+            txtPassword.Text = "";
+            txtPhone.Text = "";
+            txtConfirmPassword.Text = "";
+            txtAddress.Text = "";
+            txtCity.Text = "";
+            txtCountry.Text = "";
 
 
         }
         private void btnReset_Click(object sender, EventArgs e)
+        {
+            clear();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
         {
 
         }
